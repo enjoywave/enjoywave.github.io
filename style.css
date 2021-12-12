@@ -1,0 +1,107 @@
+:root {
+  
+}
+
+.container {
+  display : grid;
+  grid-template-areas: 
+  '. header .'
+  '. profile .'
+  '. content-list .'
+  'footer footer footer';
+  max-width: 100%;
+  grid-template-rows: 80px 170px minmax(500px, auto) 80px;
+  grid-template-columns: 1fr 70% 1fr;
+  grid-row-gap: 24px;
+  font-family: 'Gowun Dodum', sans-serif;
+  background-color: whitesmoke;
+}
+
+.container * {
+  display: flex;
+}
+
+.header {
+  grid-area: header;
+  /* background: white; */
+  /* background-color: gray; */
+  flex : none;
+  position : fixed;
+  width : 100%;
+  height : 80px;
+  top : 0;
+  bottom: 0;
+  left : 0;
+  right : 0;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.title {
+  font-size : 30px;
+  flex-grow : 1;
+  justify-content: center;
+}
+
+.nav {
+  margin : 10px;
+}
+
+.nav li {
+  margin : 10px;
+}
+
+.profile {
+  grid-area: profile;
+  border: 1px solid black;
+  margin: 10px 0;
+  background-color: white;
+}
+
+.content-list {
+  grid-area: content-list;
+  flex-wrap: wrap;
+}
+
+.content-list div {
+  width : 100% ;
+  padding : 4px 4px 12px 4px;
+  margin-bottom: 10px;
+  /* border: 1px solid black; */
+  /* background-color: white; */
+  font-size: 20px;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: darkblue;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .header {
+    width : 100%;
+    flex-direction: column;
+    position : absolute;
+  }
+  .title {
+
+    justify-content: center;
+    align-items: center;
+    padding-top:10px;
+    font-size : 3vw;
+  }
+  .search-input {
+    max-width : 3vw;
+  }
+  .nav {
+    align-items : center;
+    justify-content : space-between;
+    padding-bottom:10px;
+    width : 100%;
+    font-size : 2vw;
+    size: 2vw;
+  }
+}
